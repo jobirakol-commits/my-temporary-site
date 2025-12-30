@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="ROSCA.css">
+</head>
+
+<body>
+    <header>
+        <h1>ROTATING SAVING AND CREDIT ASSOCIATION (ROSCA)</h1>
+    </header>
+
+    <div id="registration-page" class="page active">
+        <h2>Member Registration</h2>
+        <form id="registration-form">
+            <label for="reg-name">Full Name:</label>
+            <input type="text" id="reg-name" required><br>
+
+            <label for="reg-email">Email (Login ID):</label>
+            <input type="email" id="reg-email" required><br>
+
+            <label for="reg-password">Password:</label>
+            <input type="password" id="reg-password" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already a member? <a href="#" onclick="showPage('login-page')">Login here</a></p>
+    </div>
+
+    <div id="login-page" class="page">
+        <h2>Member Login</h2>
+        <form id="login-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required><br>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required><br>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>New member? <a href="#" onclick="showPage('registration-page')">Register here</a></p>
+    </div>
+
+    <div id="dashboard-page" class="page">
+        <h2><span id="welcome-message"></span> - Savings Dashboard</h2>
+        <p>Contribution: **50,000** per week | Payout: **500,000**</p>
+
+        <div class="summary">
+            <div class="summary-box">
+                <h3>Current Week</h3>
+                <p id="current-week"></p>
+            </div>
+            <div class="summary-box">
+                <h3>Recipient This Week</h3>
+                <p id="current-recipient"></p>
+            </div>
+        </div>
+
+        <h3>Contribution Schedule</h3>
+        <table id="schedule-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Recipient</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="ROSCA.js"></script>
+</body>
+
+</html>
